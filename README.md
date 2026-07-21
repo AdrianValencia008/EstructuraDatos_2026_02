@@ -25,7 +25,7 @@ En **tu fork**:
 
 1. Haz clic en **Code**
 2. Ve a la pestaña **Codespaces**
-3. Haz clic en **Create codespace on master**
+3. Haz clic en **Create codespace on main**
 
 ⏳ La primera vez puede tardar unos minutos.
 
@@ -49,7 +49,6 @@ No necesitas instalar nada manualmente.
 .
 ├── goodrich/        # Código fuente del libro (NO modificar)
 ├── notebooks/       # Notebooks de clase con teoría (NO modificar)
-├── exercises/       # Enunciados de ejercicios (NO modificar)
 └── student_work/    # ← TU TRABAJO VA AQUÍ
 ```
 
@@ -61,7 +60,6 @@ No necesitas instalar nada manualmente.
 
 - `goodrich/`
 - `notebooks/`
-- `exercises/`
 
 🟢 **Trabaja únicamente en:**
 
@@ -99,9 +97,9 @@ git remote add upstream https://github.com/arleyfernandotorresgalindo/Estructura
 
 ```bash
 git fetch upstream              # Trae lo del profe
-git rebase upstream/master      # Te pones al día
+git rebase upstream/main      # Te pones al día
 git submodule update            # Actualiza el código del libro (goodrich/)
-git push origin master --force  # Subes tu versión actualizada
+git push origin main --force  # Subes tu versión actualizada
 ```
 
 👆 Esto actualiza tu fork con el material nuevo sin perder tu trabajo en `student_work/`
@@ -122,7 +120,7 @@ O usa el panel **Source Control** de VS Code (ícono de rama en la barra lateral
 
 # 📓 Uso de Jupyter
 
-1. Ve a la carpeta `notebooks/` o `exercises/`
+1. Ve a la carpeta `notebooks/`
 2. Abre un archivo `.ipynb`
 3. Selecciona el kernel **Python 3.12**
 
@@ -131,9 +129,8 @@ O usa el panel **Source Control** de VS Code (ícono de rama en la barra lateral
 # 🔁 Flujo de trabajo recomendado
 
 1. Revisa la teoría en `notebooks/`
-2. Lee los ejercicios en `exercises/`
-3. Resuelve y guarda tu trabajo en `student_work/`
-4. Haz commit y push al terminar
+2. Resuelve y guarda tu trabajo en `student_work/`
+3. Haz commit y push al terminar
 
 ---
 
@@ -143,18 +140,18 @@ O usa el panel **Source Control** de VS Code (ícono de rama en la barra lateral
 
 ```bash
 git fetch upstream
-git rebase upstream/master
+git rebase upstream/main
 git submodule update
-git push origin master --force
+git push origin main --force
 ```
 
 ### Error al hacer rebase (cambios locales sin guardar)
 
 ```bash
 git stash
-git rebase upstream/master
+git rebase upstream/main
 git stash pop
-git push origin master --force
+git push origin main --force
 ```
 
 ---
