@@ -1,0 +1,3 @@
+[submodule "goodrich"]
+	path = goodrich
+	url = https://github.com/arleyfernandotorresgalindo/Goodrich
