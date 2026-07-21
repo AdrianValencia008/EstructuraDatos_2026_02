@@ -1,0 +1,16 @@
+{
+  "name": "Estructuras de Datos - Python",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "pip install -r requirements.txt && git config merge.ours.driver true && git submodule update --init && git remote add upstream https://github.com/arleyfernandotorresgalindo/EstructuraDatos_2026_02.git || true",
+  "remoteEnv": {
+    "PYTHONPATH": "${containerWorkspaceFolder}"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "ms-python.python"
+      ]
+    }
+  }
+}
