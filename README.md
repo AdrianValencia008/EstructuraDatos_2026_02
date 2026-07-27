@@ -153,7 +153,14 @@ git rebase upstream/main
 git stash pop
 git push origin main --force
 ```
+---
+## Horarios Pitágoras
 
+| Día       | Horario |
+|-----------|---------|
+| Miércoles | 10 - 11 |
+| Jueves    | 1 - 2   |
+| Viernes   | 10 - 11 |
 ---
 
 ## 👨‍🏫 Autor
