@@ -1,0 +1,35 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+n = np.linspace(1, 30, 500)
+fA = 40*n**2
+fB = 2*n**3
+
+n0 = 20
+yA_n0 = 40*n0**2
+
+fig1, ax = plt.subplots(figsize=(7, 5))
+
+ax.plot(n, fA, color="#1B6FC9", linewidth=2, label=r"A: $40n^2$")
+ax.plot(n, fB, color="#D9720C", linewidth=2, label=r"B: $2n^3$")
+
+# Punto de corte n0
+ax.plot(n0, yA_n0, "o", color="#333333", markersize=8, zorder=5)
+ax.axvline(n0, color="#888888", linestyle="--", linewidth=1)
+ax.annotate(
+    f"$n_0={n0}$",
+    xy=(n0, yA_n0),
+    xytext=(n0 + 1.5, yA_n0 + 200),
+    fontsize=11,
+)
+
+ax.set_xlabel("n")
+ax.set_ylabel("Número de operaciones")
+ax.set_title("Ejercicio 3.3 — Intersección de A y B")
+ax.legend(frameon=False)
+ax.grid(True, linewidth=0.4, alpha=0.5)
+ax.set_xlim(1, 30)
+ax.set_ylim(0, max(fB[-1], fA[-1]) * 1.05)
+
+plt.tight_layout()
+plt.show()
