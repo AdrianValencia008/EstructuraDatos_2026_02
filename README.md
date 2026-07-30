@@ -4,6 +4,10 @@ Bienvenido al repositorio del curso de **Estructuras de Datos y Algoritmos con P
 
 El curso está diseñado para trabajar con **GitHub Codespaces**, sin necesidad de instalar nada en tu computador.
 
+> 💻 ¿No puedes desplegar Codespaces desde tu red o equipo (por ejemplo, en
+> la universidad)? Usa la alternativa con **Google Colab**: consulta la guía
+> [README_COLAB.md](README_COLAB.md).
+
 ---
 
 # 🍴 Paso obligatorio: hacer un Fork
