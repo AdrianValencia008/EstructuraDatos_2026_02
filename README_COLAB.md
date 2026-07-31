@@ -266,12 +266,50 @@ Drive.
 
 ---
 
+# 🗺️ Diagrama del flujo completo
+
+```mermaid
+flowchart TD
+    A["👨‍🏫 Repositorio del profesor<br/>(upstream)"] -->|Fork - Paso 0| B["🍴 Tu fork en GitHub<br/>(origin)"]
+    B -->|git clone - Paso 2| C["💾 Copia en tu Google Drive<br/>MyDrive/EstructuraDatos_2026_02"]
+
+    subgraph COLAB["🚀 Google Colab (cada clase)"]
+        C --> D["📓 Abrir notebook desde Drive<br/>montar Drive + pip install"]
+        D --> E{"¿Dónde trabajo?"}
+        E -->|"🔴 NO modificar"| F["notebooks/ y goodrich/"]
+        E -->|"🟢 Aquí va tu trabajo"| G["student_work/"]
+        G --> H["git add / commit / push<br/>(Paso 4, con GITHUB_TOKEN)"]
+    end
+
+    H -->|push| B
+    A -->|"el profesor publica<br/>material nuevo"| I["🔄 fetch upstream + rebase<br/>(Paso 5)"]
+    I --> C
+
+    style A fill:#f9d5b0,color:#000
+    style B fill:#a8d5ba,color:#000
+    style C fill:#a8c8e8,color:#000
+    style G fill:#b8e6b8,color:#000
+    style F fill:#f0b0b0,color:#000
+```
+
+**Cómo leerlo:**
+- **Naranja** → repo del profesor, solo lectura (nunca haces push ahí directamente).
+- **Verde (fork)** → tu copia en GitHub, a donde SÍ subes tu trabajo.
+- **Azul** → tu copia local en Google Drive, donde vive todo mientras trabajas en Colab.
+- **Rojo** dentro de Colab → carpetas prohibidas de modificar.
+- **Verde claro** dentro de Colab → única carpeta donde debes trabajar (`student_work/`).
+- Las flechas de vuelta (`fetch upstream` → `rebase`) son cómo traes actualizaciones del profesor sin perder tu trabajo.
+
+---
+
 # 🔁 Flujo de trabajo recomendado
 
 1. Monta Drive y abre el notebook de la clase directamente desde Drive.
 2. Instala dependencias y ajusta `sys.path` (celda inicial).
 3. Revisa la teoría en `notebooks/` y resuelve en `student_work/`.
-4. Guarda tu trabajo con `git add` / `commit` / `push` (Paso 4).
+4. Guarda tu trabajo con `git add` / `commit` / `push` (Paso 4, idealmente
+   desde un notebook aparte fuera de `student_work/` — ver nota de
+   seguridad del Paso 4).
 5. Antes de cada clase nueva, trae las actualizaciones del profesor
    (Paso 5).
 
